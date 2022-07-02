@@ -25,7 +25,8 @@
         .find((item)=>item.age ===20 && item.name ==="Amy")
     console.log(find3);
 
-
+    const find4 = users.find((item)=>item.name.startsWith("J"))
+    console.log(find4);
 
 
 })();
