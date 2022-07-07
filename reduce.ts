@@ -44,6 +44,7 @@
       console.log(result2); //[ 'HTML','React','Javascript','Java','CSS','JavaScript','Redux','NodeJS' ]
       
 
+      //https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
       
 
 })();
