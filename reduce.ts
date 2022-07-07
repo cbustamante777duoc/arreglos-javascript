@@ -46,6 +46,7 @@
 
       //https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
       //https://stackoverflow.com/questions/64188099/how-to-reduce-array-of-objects-into-one-object
+      //https://stackoverflow.com/questions/67098336/how-reduce-array-of-objects
       
 
 })();
