@@ -1,52 +1,57 @@
+
 (()=>{
 
-    const users = [
-        { name: "John", age: 34 },
-        { name: "Amy", age: 20 },
-        { name: "camperCat", age: 10 },
-    ];
+
+  //encuentra el primer numero par del array
+  let array1 = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+  const result = array1.findIndex((item)=> item%2 == 0);
+  console.log(result); //0
+
+  //filtrar los numeros impares de un array
+  let result2 = array1.filter((item) => item%2 == 1);
+  console.log(result2); //[ 3, 5, 7, 9, 11, 13, 15 ]
+
+  interface ordersInterface{
+      drink: string;
+      name: string;
+      price: number;
+  }
+
+
+  const orders:ordersInterface[] = [
+      { drink: "Cappuccino", name: "John Appleseed", price: 200 },
+      { drink: "Espresso", name: "Mya Stuart", price: 210 },
+      { drink: "Cappuccino", name: "Emma Berry", price: 200 },
+      { drink: "Mocha", name: "John Snow", price: 220 },
+      { drink: "Raf coffee", name: "John Snow", price: 220 },
+      { drink: "Raf coffee", name: "Sansa Stark", price: 220 },
+      { drink: "Latte macchiato", name: "Brand Stark", price: 250 },
+  ];
+
+  //filtrar por dos condiciones
+  const result3 = orders.
+  filter(item => item.drink === "Cappuccino" && item.name === "John Appleseed");
+  console.log(result3);
 
 
 
-    //  METODO QUE SUMA TODO 
-    /**
-     * suma todas las edades de los users y empienza en 0
-     */
-    const result = users.reduce((total, item)=> total + item.age, 0);
+  //eliminar el primer elemento del array de orders
+  console.log(orders.pop()); //{ drink: 'Latte macchiato', name: 'Brand Stark', price: 250 }
 
-    console.log(result); //64
+  //ejercicio 4:encontrar todos los price ==220     
+  const result4 = orders.filter(item=> (item.price ==220));
+  console.log(result4);
 
-    const developers = [
-        {
-          id: 1,
-          name: "John",
-          skills: ["HTML", "React", "Javascript", "Java"],
-        },
-        {
-          id: 2,
-          name: "Jane",
-          skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "NodeJS"],
-        },
-        {
-          id: 3,
-          name: "Jack",
-          skills: ["HTML", "CSS", "JavaScript", "React", "Redux", "NodeJS"],
-        },
-      ];
+  // |[ { drink: 'Mocha', name: 'John Snow', price: 220 },
+  //   { drink: 'Raf coffee', name: 'John Snow', price: 220 },
+  //   { drink: 'Raf coffee', name: 'Sansa Stark', price: 220 } ]
 
-      const result2 = developers.reduce(function
-        (allSkills, item) {
-        // return [...allSkills, ...item.skills] //copia todos los elements
-        // return new Set([...allSkills, ...item.skills]) //evita que se copien los valores repitidos
-        return Array.from(new Set([...allSkills, ...item.skills])) //obtiene un nuevo array
-      },[]);
+  //suma todos los precios de las orders
+  const result5 = orders.reduce((total, item) => total + item.price, 0);
+  console.log(result5);//1270
 
-      console.log(result2); //[ 'HTML','React','Javascript','Java','CSS','JavaScript','Redux','NodeJS' ]
-      
+  
 
-      //https://www.digitalocean.com/community/tutorials/js-finally-understand-reduce
-      //https://stackoverflow.com/questions/64188099/how-to-reduce-array-of-objects-into-one-object
-      //https://stackoverflow.com/questions/67098336/how-reduce-array-of-objects
-      
+
 
 })();
